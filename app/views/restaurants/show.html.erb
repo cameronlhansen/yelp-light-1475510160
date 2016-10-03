@@ -47,3 +47,123 @@
     </div>
   </div>
 </div>
+
+<!-- A Restaurant has many reviews -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Reviews
+      </li>
+
+      <% @restaurant.reviews.each do |review| %>
+        <li class="list-group-item">
+          <a href="/reviews/<%= review.id %>">
+            <%= review.user_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Restaurant has many restaurants_and_tags -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Restaurants_and_tags
+      </li>
+
+      <% @restaurant.restaurants_and_tags.each do |restaurants_and_tag| %>
+        <li class="list-group-item">
+          <a href="/restaurants_and_tags/<%= restaurants_and_tag.id %>">
+            <%= restaurants_and_tag.restaurant_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Restaurant has many restaurant_photos -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Restaurant_photos
+      </li>
+
+      <% @restaurant.restaurant_photos.each do |restaurant_photo| %>
+        <li class="list-group-item">
+          <a href="/restaurant_photos/<%= restaurant_photo.id %>">
+            <%= restaurant_photo.user_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Restaurant has many restaurant_owners -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Restaurant_owners
+      </li>
+
+      <% @restaurant.restaurant_owners.each do |restaurant_owner| %>
+        <li class="list-group-item">
+          <a href="/restaurant_owners/<%= restaurant_owner.id %>">
+            <%= restaurant_owner.user_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Restaurant has many tags -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Tags
+      </li>
+
+      <% @restaurant.tags.each do |tag| %>
+        <li class="list-group-item">
+          <a href="/tags/<%= tag.id %>">
+            <%= tag.tag_name %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Restaurant has many users -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Users
+      </li>
+
+      <% @restaurant.users.each do |user| %>
+        <li class="list-group-item">
+          <a href="/users/<%= user.id %>">
+            <%= user.firstname %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -32,3 +32,43 @@
     </div>
   </div>
 </div>
+
+<!-- A Review has many restaurant_photos -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Restaurant_photos
+      </li>
+
+      <% @review.restaurant_photos.each do |restaurant_photo| %>
+        <li class="list-group-item">
+          <a href="/restaurant_photos/<%= restaurant_photo.id %>">
+            <%= restaurant_photo.user_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Review has many responses -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Responses
+      </li>
+
+      <% @review.responses.each do |response| %>
+        <li class="list-group-item">
+          <a href="/responses/<%= response.id %>">
+            <%= response.ownership_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

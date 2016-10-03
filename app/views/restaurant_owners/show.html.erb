@@ -26,3 +26,23 @@
     </div>
   </div>
 </div>
+
+<!-- A Restaurant owner has many responses -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Responses
+      </li>
+
+      <% @restaurant_owner.responses.each do |response| %>
+        <li class="list-group-item">
+          <a href="/responses/<%= response.id %>">
+            <%= response.ownership_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
