@@ -18,7 +18,7 @@
       <% @responses.each do |response| %>
       <tr>
         <td><%= response.ownership.user_id %></td>
-        <td><%= response.review_id %></td>
+        <td><%= response.review.user_id %></td>
         <td><%= response.content %></td>
         <td>
           <a href="/responses/<%= response.id %>" class="btn btn-primary">Show</a>
